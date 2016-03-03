@@ -29,4 +29,4 @@ The EMS Web Services can either run alongside the EMS or on a completely separat
 
 ### Web Server Requirements
 
-The EMS Web Services require a web server, such as the Apache Web Server, along with that web server’s PHP and CURL modules/plugins.
+The EMS Web Services require a web server, such as EWS (the default EvoStream Web Server that comes with EMS) or the Apache Web Server, along with that web server’s PHP and CURL modules/plugins.
