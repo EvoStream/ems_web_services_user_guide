@@ -17,13 +17,10 @@ The AutoRouting web service has two configuration values which can be set in the
 2. **destination\_uri.** The address of the computer you wish to forward the streams to.
    
    ``` 
-       "StreamAutoRouter": {
-           "plugin_switch": "enabled",
-           "parameters": {
-               "token": "stream",
-               "destination_uri": "192.168.2.3"
-           }
-       },  
+[StreamAutoRouter]
+token = stream
+destination_uri = 192.168.2.3
+
    ```
 
 In this configuration, all the localstreamnames with "**stream**" in the host EMS will forward the stream to the destination URI which is the *192.168.2.3*.
@@ -51,17 +48,14 @@ The destination for the recorded file must be set in the config.ini file.
    
 2. **period_time**.  The period of time between pulses expressed in seconds between 1 and 86399. The maximum period\_time is 86399 (24 hours).
    
-   ``` 
-       "StreamRecorder": {
-           "plugin_switch": "enabled",
-           "parameters": {
-               "file_location": "C:\\EvoStream\\media",
-               "period_time": 3600
-           }
-       },    
+   ```   
+[StreamRecorder]
+file_location = "C:\\EvoStream\\media"
+period_time = 60;    
+
    ```
 
-In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 3600 seconds (60 minutes) each file as long as the plugin and or the stream is running.
+In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 60 minutes each file as long as the plugin and or the stream is running.
 
 
 
@@ -78,15 +72,11 @@ The list of EMS instances the Load Balancer will maintain is defined in the conf
 1. **destination_uri**.  The array of ip address where the inbound streams would be replicated to
    
    ``` 
-       "StreamLoadBalancer": {
-           "plugin_switch": "enabled", 
-           "parameters": {
-               "destination_uri": [
-                   "192.168.2.3",
-                   "192.168.2.4",
-                   "192.168.2.5"
-               ]
-           }
+[StreamLoadBalancer]
+destination_uri[] = 192.168.2.3
+destination_uri[] = 192.168.2.4
+destination_uri[] = 192.168.2.5
+
    ```
 
 In this configuration, all the server IPs listed *(192.168.2.3, 192.168.2.4, 192.168.2.5)* will have the same pulled streams as the host EMS.
@@ -116,15 +106,12 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
    **Note:** Bootstrap is the bootstrap file which should be included with the HDS chunks. If you are unsure what this should be, it should be left as ‘**bootstrap**’.
    
    ``` 
-       "AmazonHDSUpload": {
-           "plugin_switch": "enabled",
-           "parameters": {
-               "aws_access_key": "1234567890",
-               "aws_secret_key": "ABCDEFGHIJ1234567890",
-               "default_bucket": "HDS_files",
-               "bootstrap": "bootstrap"
-           }
-       },
+[AmazonHDSUpload]
+aws_access_key = '1234567890'
+aws_secret_key = 'ABCDEFGHIJ1234567890'
+default_bucket = 'HDS-files'
+bootstrap = 'bootstrap'    
+
    ```
 
 In this configuration, all the HDS files to be created will automatically be uploaded on the Amazon S3 bucket inside *HDS_files*.
@@ -148,14 +135,11 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 3. **default_bucket**. The bucket in amazon aws s3 where files will be uploaded
    
    ``` 
-       "AmazonHLSUpload": {
-           "plugin_switch": "enabled",
-           "parameters": {
-               "aws_access_key": "1234567890",
-               "aws_secret_key": "ABCDEFGHIJ1234567890",
-               "default_bucket": "HLS_files",
-           }
-       },
+[AmazonHLSUpload]
+aws_access_key = '1234567890'
+aws_secret_key = 'ABCDEFGHIJ1234567890'
+default_bucket = 'HLS-files'
+
    ```
 
 In this configuration, all the HLS files to be created will automatically be uploaded on the Amazon S3 bucket inside *HLS_files*.
@@ -181,14 +165,11 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 3. **default_bucket**. The bucket in amazon aws s3 where files will be uploaded
    
    ``` 
-       "AmazonDASHUpload": {
-           "plugin_switch": "enabled",
-           "parameters": {
-               "aws_access_key": "1234567890",
-               "aws_secret_key": "ABCDEFGHIJ1234567890",
-               "default_bucket": "DASH_files",
-           }
-       },
+[AmazonHDSUpload]
+aws_access_key = '1234567890'
+aws_secret_key = 'ABCDEFGHIJ1234567890'
+default_bucket = 'DASH-files',
+
    ```
 
 In this configuration, all the DASH files to be created will automatically be uploaded on the Amazon S3 bucket inside *DASH_files.*
