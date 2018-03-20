@@ -20,7 +20,6 @@ The AutoRouting web service has two configuration values which can be set in the
 [StreamAutoRouter]
 token = stream
 destination_uri = 192.168.2.3
-
    ```
 
 In this configuration, all the localstreamnames with "**stream**" in the host EMS will forward the stream to the destination URI which is the *192.168.2.3*.
@@ -52,7 +51,6 @@ The destination for the recorded file must be set in the config.ini file.
 [StreamRecorder]
 file_location = "C:\\EvoStream\\media"
 period_time = 60;    
-
    ```
 
 In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 60 minutes each file as long as the plugin and or the stream is running.
@@ -76,7 +74,6 @@ The list of EMS instances the Load Balancer will maintain is defined in the conf
 destination_uri[] = 192.168.2.3
 destination_uri[] = 192.168.2.4
 destination_uri[] = 192.168.2.5
-
    ```
 
 In this configuration, all the server IPs listed *(192.168.2.3, 192.168.2.4, 192.168.2.5)* will have the same pulled streams as the host EMS.
@@ -111,7 +108,6 @@ aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
 default_bucket = 'HDS-files'
 bootstrap = 'bootstrap'    
-
    ```
 
 In this configuration, all the HDS files to be created will automatically be uploaded on the Amazon S3 bucket inside *HDS_files*.
@@ -139,7 +135,6 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
 default_bucket = 'HLS-files'
-
    ```
 
 In this configuration, all the HLS files to be created will automatically be uploaded on the Amazon S3 bucket inside *HLS_files*.
@@ -169,7 +164,6 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
 default_bucket = 'DASH-files',
-
    ```
 
 In this configuration, all the DASH files to be created will automatically be uploaded on the Amazon S3 bucket inside *DASH_files.*
