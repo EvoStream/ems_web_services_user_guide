@@ -106,7 +106,7 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 [AmazonHDSUpload]
 aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
-default_bucket = 'HDS-files'
+default_bucket = 'HDS_files'
 bootstrap = 'bootstrap'    
    ```
 
@@ -134,7 +134,7 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 [AmazonHLSUpload]
 aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
-default_bucket = 'HLS-files'
+default_bucket = 'HLS_files'
    ```
 
 In this configuration, all the HLS files to be created will automatically be uploaded on the Amazon S3 bucket inside *HLS_files*.
@@ -163,7 +163,7 @@ Your Amazon S3 access and secret key must be set in the config.ini file.
 [AmazonHDSUpload]
 aws_access_key = '1234567890'
 aws_secret_key = 'ABCDEFGHIJ1234567890'
-default_bucket = 'DASH-files',
+default_bucket = 'DASH_files',
    ```
 
 In this configuration, all the DASH files to be created will automatically be uploaded on the Amazon S3 bucket inside *DASH_files.*
