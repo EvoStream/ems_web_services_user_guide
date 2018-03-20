@@ -37,6 +37,5 @@ The EMS Web Services can either run alongside the EMS or on a completely separat
 - At least 700 MHz processor
 - Minimum of  128MB (system memory)
 - At least 10MB free storage space
-- Web Server (if .php scripts will be used)
-- Node.js (if .js scripts will be used)
+- Web Server
 - Internet access
